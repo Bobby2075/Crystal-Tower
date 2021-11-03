@@ -185,7 +185,7 @@ public class PlayerMovement : MonoBehaviour {
             Vector3 v = rb.velocity;
             v.y = 0f;
             rb.velocity = v;
-            rb.AddForce(Vector2.up * airJumpForce * 1.5f);
+            rb.AddForce(Vector2.up * airJumpForce * 2.5f);
             rb.AddForce(normalVector * airJumpForce * 0.5f);
 
             Invoke(nameof(ResetJump), jumpCooldown);

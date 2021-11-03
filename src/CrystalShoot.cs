@@ -68,14 +68,26 @@ public class CrystalShoot : MonoBehaviour
 
         fireCountdown -= Time.deltaTime;
 
+        
     }
 
     void shoot() {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet bullet = bulletGO.GetComponent<bullet>();
+        //GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //Rigidbody bulletRB = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //bullet bullet = bulletGO.GetComponent<bullet>();
 
-        if (bullet != null)
-            bullet.seek(target);
+        
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        shoot shoot = bulletGO.GetComponent<shoot>();
+
+        if (shoot != null)
+            shoot.seek(target);
+
+
+        /*if (bullet != null)
+            bullet.seek(target);*/
+
+        
     }
 
     private void OnDrawGizmosSelected() {

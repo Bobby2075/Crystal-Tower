@@ -6,10 +6,15 @@ public class bullet : MonoBehaviour
 {
 
     private Transform target;
+    private Rigidbody rb;
 
     public float speed = 70f;
     public void seek(Transform _target) {
         target = _target;
+    }
+
+    private void Start() {
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update() {
